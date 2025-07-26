@@ -1,0 +1,21 @@
+
+{
+  "manifest_version": 3,
+  "name": "Instagram Comment Classifier",
+  "version": "1.1",
+  "description": "Analyzes and highlights Instagram comments using a HuggingFace model via FastAPI.",
+  "icons": {
+    "128": "icon-32.png"
+  },
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://localhost:8000/"
+  ],
+  "content_scripts": [{
+    "matches": ["https://www.instagram.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_end"
+  }]
+}
